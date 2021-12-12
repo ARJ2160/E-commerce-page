@@ -4,7 +4,7 @@ import truck from "../assets/truck.svg"
 
 const Cart = () => {
     return (
-        <div className="col-lg-3">
+        <div className="col-lg-4">
             <div className="cart-logos">
                 <img className="logos cart-logo" src={cart} alt="" />
                 <div className="logo-line"></div>

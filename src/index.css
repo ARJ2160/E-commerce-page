@@ -34,7 +34,6 @@ html{
 /*<------------------------------------- Navbar CSS ------------------------------------->*/
 nav{
     height: 100px;
-    /* margin-top: 10px; */
     padding: 30px;
     display: flex;
     justify-content: space-between;
@@ -156,7 +155,7 @@ nav{
     background-color: #777777;
 }
 
-@media only screen and (max-width: 992px){
+@media (max-width: 992px){
     .nav-links, .nav-btn{
         display: none;
     }
@@ -183,10 +182,11 @@ nav{
     margin-right: 25px;
 }
 .form--inputs input{
+    width: 180px;
     width: 15vw;
     border-radius: 30px;
     padding: 0.8rem 1.5rem;
-    margin: 10px 10px 10px 0;
+    margin: 10px 20px 10px 0;
     border: solid 2px;
     border-color: grey;
     color: grey
@@ -196,12 +196,27 @@ nav{
     height: auto;
 }
 .form--inputs select{
+    width: 180px;
     width: 15vw;
     border-radius: 30px;
     padding: 0.8rem 1.5rem;
     margin: 10px 10px 10px 0;
     border-color: grey;
     color: grey
+}
+@media (max-width: 1100px ) {
+    .form--inputs select, .form--inputs input{
+        width: 150px;
+    }
+}
+/*<------------------------------ Payment Section ---------------------------------->*/
+.cards-grid .cards img {
+    width: 50px;
+    height: 50px;
+}
+.cards-grid .cards button {
+    width: 5vw;
+    border-radius: 30px;
 }
 /*<------------------------------ Cart Section ---------------------------------->*/
 .cart-logos{

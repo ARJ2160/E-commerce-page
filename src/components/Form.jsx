@@ -2,15 +2,15 @@ import React from 'react'
 
 const Form = () => {
     return (
-        <div className="col-lg-6 col-md-6">
+        <div className="col-lg-4 col-md-6">
             <h4>Shipping and Payment</h4>
             <div className="login-btn d-flex justify-content-start mt-5">
                 <button className="common-button login">LOG IN</button>
                 <button className="common-button signup">SIGN UP</button>
             </div>
             <h4 className="mt-5">Shipping Information</h4>
-            <div className="row flex-row">
-                <div className="col-lg-5">
+            <div className="row flex-row justify-content-around">
+                <div className="col-lg-4">
                     <form className="form--inputs">
                         <input type="email" placeholder='Email' />
                         <input type="text"  placeholder='First Name' />
@@ -18,7 +18,7 @@ const Form = () => {
                         <input type="number" placeholder='Phone Number' />
                     </form>
                 </div>
-                <div className="col-lg-5">
+                <div className="col-lg-4">
                     <form className="form--inputs">
                         <input type="text" placeholder='Address' />
                         <input type="text" placeholder='City' />
