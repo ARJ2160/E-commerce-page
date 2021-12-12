@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+// import Home from "./components/Home";
+import HeroNav from "./components/HeroNav";
+import Form from "./components/Form"
+import Payments from "./components/Payments";
+import Cart from "./components/Cart"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <HeroNav />
+            <div className="row justify-content-center align-items-center side-padding mt-5 me-0 ms-0">
+                <Form />
+                <Payments />
+                <Cart />
+            </div>
+        </div>
+    );
 }
 
 export default App;
