@@ -1,47 +1,33 @@
 import React from 'react'
-import paypal from "../assets/Paypal.webp"
-import visa from "../assets/visa.webp"
-import mastercard from "../assets/Mastercard.webp"
-import discover from "../assets/Discover.webp"
-import dpd from "../assets/DPD.webp"
 
 const Payments = () => {
     return (
-        <div className="col-lg-4 col-md-6">
-            <h4 className="text-center">Payment Method</h4>
-            <div className="cards-grid">
-                <div className="cards d-flex justify-content-center">
-                    <div>
-                        <button className="common-button">
-                            <img src={paypal} alt="" />
-                        </button>
-                    </div>
-                    <div>
-                        <button>
-                            <img src={visa} alt="" />
-                        </button>
-                    </div>
-                    <div>
-                        <button>
-                            <img src={mastercard} alt="" />
-                        </button>
+        <div className="col-lg-4 col-md-6 mb-5 ps-0 pe-0">
+            <div className="payment">
+            <h4 className="text-start">Payment Method</h4>  
+                <div className="cards-grid">
+                    <div className="cards payment-btns d-flex justify-content-start">
+                        <button className="background paypal" />
+                        <button className="background visa" />
+                        <button className="background mastercard" />
+                    </div>   
+                    <div className="cards payment-btns d-flex justify-content-start">
+                        <button className="background maestrocard" />
+                        <button className="background amazon" />
+                        <button className="background fedex" />
                     </div>
                 </div>
-                <div className="cards d-flex justify-content-center">
-                <div>
-                        <button>
-                            <img src={discover} alt="" />
-                        </button>
-                    </div>
-                    <div>
-                        <button>
-                            <img src={dpd} alt="" />
-                        </button>
-                    </div>
-                    <div>
-                        <button>
-                            <img src={mastercard} alt="" />
-                        </button>
+            </div>
+            <div className="delivery mt-5">
+                <h4 className="text-start mb-2">Delivery Method</h4> 
+                <div className="services-grid">
+                    <div className="deliveries delivery-btns d-flex justify-content-start">
+                        <button className="background truck" />
+                        <button className="background visa" />
+                    </div>   
+                    <div className="deliveries delivery-btns d-flex justify-content-start">
+                        <button className="background maestrocard" />
+                        <button className="background amazon" />
                     </div>
                 </div>
             </div>

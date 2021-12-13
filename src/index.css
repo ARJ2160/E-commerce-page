@@ -16,25 +16,35 @@
     --btn-color: #1DB954;
 }
 html{
-    height: 100vh;
+    position: relative;    
+    min-height: 100vh;
 }
 .side-padding {
     padding : 0 30px;
 }
 @media (max-width: 500px) {
     .side-padding{
-        padding: 0 10px;
+        padding: 0 15px;
     }
 }
 .common-button{
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
     border-radius: 30px;
-    padding: 0.7rem 2.5rem;
+    padding: 0.7rem 1.8rem;
     border: none;
+    transition: var(--transition);
 }
 /*<------------------------------------- Navbar CSS ------------------------------------->*/
 nav{
     height: 100px;
     padding: 30px;
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
@@ -46,7 +56,7 @@ nav{
     width: 50%;
     height: 100%;
     margin: 0 auto;
-    transition: all 0.2s ease-in-out;
+    transition: var(--transition);
 }
 .nav-links li a {
     text-decoration: none;
@@ -81,13 +91,10 @@ nav{
     height: 30px;
 }
 .nav-line{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95vw;
     height: 5px;
     margin: 0 auto;
-    background-color: #758283;
+    border: solid 1px grey;
+    background-color: #a5a3a3;
 }
 
 /* Custom Navbar Toggler Button */
@@ -164,6 +171,7 @@ nav{
     }
     .nav-links.show {
         position: absolute;
+        /* position: relative; */
         height: 130px;
         width: 100vw;
         top: 130px;
@@ -176,13 +184,24 @@ nav{
     }
 }
 /*<------------------------------ Form Section ---------------------------------->*/
+.form{
+    position: relative;
+} 
 .login{
     color: #fff;
     background-color: var(--btn-color);
     margin-right: 25px;
 }
+.signup{
+    background-color: transparent;
+    border: solid 1px grey;
+}
+.signup:hover{
+    background-color: #000000;
+    color: #fff
+}
 .form--inputs input{
-    width: 180px;
+    width: 150px;
     width: 15vw;
     border-radius: 30px;
     padding: 0.8rem 1.5rem;
@@ -196,7 +215,7 @@ nav{
     height: auto;
 }
 .form--inputs select{
-    width: 180px;
+    width: 150px;
     width: 15vw;
     border-radius: 30px;
     padding: 0.8rem 1.5rem;
@@ -209,36 +228,78 @@ nav{
         width: 150px;
     }
 }
-/*<------------------------------ Payment Section ---------------------------------->*/
-.cards-grid .cards img {
-    width: 50px;
-    height: 50px;
+@media (max-width: 450px){
+    .form--inputs select, .form--inputs input{
+        width: 80%;
+    }
 }
-.cards-grid .cards button {
-    width: 5vw;
+
+/* @media (max-width: 350px){   
+    .form--inputs select, .form--inputs input{
+        width: 80vw;
+    }
+} */
+/*<------------------------------ Payment Section ---------------------------------->*/
+.payment{
+    margin-top: 85px;
+}
+.payment-btns button, .delivery-btns button{
+    height: 50px;
     border-radius: 30px;
+    padding: 1rem 1rem 1rem 0;
+    margin: 10px 10px 5px 0;
+    border: solid 2px grey !important;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    background-color: transparent;
+    transition: var(--transition);
+}
+.payment-btns button:hover, .delivery-btns button:hover{
+    background-color: #1DB954;
+    color: white;
+}
+
+.cards-grid .cards button {
+    width: 135px;
+}
+.services-grid .deliveries button {
+    width: 200px;
+}
+.paypal{
+    background-image: url("./assets/paypal.svg");
+}
+.visa{
+    background-image: url("./assets/visa.svg");
+}
+.mastercard{
+    background-image: url("./assets/mastercard.svg");
+}
+.maestrocard{
+    background-image: url("./assets/maestrocard.svg");
+}
+.amazon{
+    background-image: url("./assets/amazon.svg");
+}
+.fedex{
+    background-image: url("./assets/Fedex.svg");
+}
+.truck{
+    background-image: url("./assets/truck.svg");
 }
 /*<------------------------------ Cart Section ---------------------------------->*/
-.cart-logos{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .logos{
     border-radius: 50%;
     padding: 1rem;
 }
-
 .cart-logo{
     border: solid 2px;
     border-color: var(--btn-color);
     transition: var(--transition)
 }
-
 .cart-logo:hover{
     background-color: var(--btn-color);
 }
-
 .truck-logo{
     border-radius: 50%;
     padding: 1rem;
@@ -246,8 +307,50 @@ nav{
 }
 .logo-line{
     margin: 0 10px !important;
-    width: 25vw;
+    width: 100%;
     height: 5px;
     margin: 0 auto;
     background-color: #758283;
+}
+.item{
+    padding: 1rem 0;
+}
+.cart--product-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.cart--total{
+    border-radius: 50px;
+    background-color: #EAEDED;
+    padding: 1rem;
+}
+/*<------------------------------ Footer Section ---------------------------------->*/
+.footer{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+    margin-bottom: 2rem;
+    /* overflow: hidden; */
+}
+.footer-back-btn{
+    background-color: transparent;
+}
+.footer--shopping--button{
+    background-color: transparent !important;
+    border: solid 1px grey !important;
+}
+.cart--shopping--button:hover{
+    background-color: #000000;
+    color: #fff
+}
+.footer--payment--button{
+    background-color: var(--btn-color) !important;
+}
+@media (max-width: 740px){
+    .footer--shopping--button, .footer--payment--button {
+        margin-bottom: 20px;
+    }
 }
