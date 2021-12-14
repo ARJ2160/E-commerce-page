@@ -11,11 +11,16 @@ const HeroNav = () => {
         <>
             <nav class="navbar">
                 <div class="container-fluid">
-                    <div className="landing">
-                        <a href="/">
-                            <img src={brand_logo} alt="e-commerce brand logo" />
-                            <span className="ms-2 text-black lead" style={{ fontSize: "25px" }}>E-Shop</span>
-                        </a>
+                    <div className="nav-landing">
+                        <a href="/"><img src={brand_logo} className="pe-3" alt="e-commerce brand logo" /></a>
+                        <div className="nav--brand--name">
+                                <span style={{ color: "gold" }}>
+                                    E-
+                                </span>
+                                <span>
+                                    Shop
+                                </span>
+                        </div>
                     </div>
                     <ul className={navBtn ? "nav-links show" : "nav-links"}>
                         <li><a href="/">Men</a></li>

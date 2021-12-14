@@ -67,12 +67,12 @@ nav{
 .nav-links li a:hover{
     color: #1DB954;
 }
-.landing {
+.nav-landing {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.landing h1 {
+.nav-landing h1 {
     font-size: 20px;
     padding-left: 10px;
 }
@@ -96,7 +96,11 @@ nav{
     border: solid 1px grey;
     background-color: #a5a3a3;
 }
-
+.nav--brand--name {
+    font-size: 25px;
+    font-weight: 500;
+    pointer-events: none;
+}
 /* Custom Navbar Toggler Button */
 .navbar-toggler {
     border: 0 !important;
@@ -241,7 +245,7 @@ nav{
 } */
 /*<------------------------------ Payment Section ---------------------------------->*/
 .payment{
-    margin-top: 85px;
+    /* margin-top: 80px; */
 }
 .payment-btns button, .delivery-btns button{
     height: 50px;
@@ -333,23 +337,27 @@ nav{
     width: 100vw;
     height: auto;
     margin-bottom: 2rem;
-    /* overflow: hidden; */
 }
 .footer-back-btn{
     background-color: transparent;
 }
 .footer--shopping--button{
-    background-color: transparent !important;
-    border: solid 1px grey !important;
+    background-color: transparent;
+    border: solid 1px grey;
 }
 .cart--shopping--button:hover{
     background-color: #000000;
     color: #fff
 }
 .footer--payment--button{
-    background-color: var(--btn-color) !important;
+    background-color: var(--btn-color);
+    color: #fff;
 }
 @media (max-width: 740px){
+    .footer--cta--buttons{
+        display: flex;
+        flex-direction: column;
+    }
     .footer--shopping--button, .footer--payment--button {
         margin-bottom: 20px;
     }
