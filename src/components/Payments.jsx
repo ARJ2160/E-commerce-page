@@ -2,9 +2,9 @@ import React from 'react'
 
 const Payments = () => {
     return (
-        <div className="col-lg-4 col-md-6 mb-5 ps-0 pe-0">
-            <div className="payment">
-            <h4 className="text-start">Payment Method</h4>  
+        <div className="payments col-lg-4 col-md-6 mb-5 ps-0 pe-0">
+            <div className="payment-cards">
+                <h4 className="text-start">Payment Method</h4>  
                 <div className="cards-grid">
                     <div className="cards payment-btns d-flex justify-content-start">
                         <button className="background paypal" />

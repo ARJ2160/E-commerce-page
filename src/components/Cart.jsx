@@ -3,17 +3,19 @@ import cart from "../assets/navbar_svg/shopping.svg"
 import truck from "../assets/truck.svg"
 import cart_truck from "../assets/cart_truck.svg"
 import products from "../cartItems"
+import { userName } from '../redux/signUpSlice'
 
 const Cart = () => {
+    
     return (
-        <div className="col-lg-3 mb-5">
+        <div className="cart col-lg-3 mb-5">
             <div className="cart-logos d-flex justify-content-between align-items-center">
                 <img className="logos cart-logo" src={cart} alt="" />
                 <div className="logo-line"></div>
                 <img className="logos truck-logo" src={truck} alt="" />
             </div>
             <div className="cart mt-5">
-                <h5 className="text-start">Your Cart</h5>
+                <h5 className="text-start">{userName ? userName + `'s` : "Your"} Cart</h5>
                 <div className="cart-items">
                     {products.map(prod => {
                         const { id, image, product_name, price, product_serial_no } = prod
