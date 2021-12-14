@@ -44,7 +44,7 @@ html{
     height: 100px;
     padding: 30px;
     display: grid;
-    grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
+    grid-template-columns: 7rem 1.5fr 2fr 1.5fr 7rem;
     position: relative;
     z-index: 99;
     transition: var(--transition);
@@ -55,7 +55,7 @@ html{
 .nav--brand--name {
     pointer-events: none;
 }
-.nav--pages--links{
+.nav--pages-link{
     grid-column: 3/4;
 }
 .nav-links{
@@ -195,6 +195,9 @@ html{
 @media(max-width: 930px){
     .nav--main{
         grid-template-columns: 2rem 1fr 2fr 1fr 2rem;
+    }
+    .nav--social-media{
+        grid-template-columns: 0;
     }
 }
 /*<------------------------------ Form Section ---------------------------------->*/

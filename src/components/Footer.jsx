@@ -3,7 +3,7 @@ import left_arrow from "../assets/left-arrow.svg"
 // import logo from "../assets/navbar_svg/shopping.svg"
 // import axios from "axios";
 require("dotenv").config();
-const Razorpay = require('razorpay')
+// const Razorpay = require('razorpay')
 
 const Footer = () => {
 

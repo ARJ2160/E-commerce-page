@@ -20,7 +20,7 @@ const Signup = () => {
         const { name, value } = e.target
         setFormValue({ ...formValues, [name]: value })
     }
-    
+
     const handleSubmit = e => {
         e.preventDefault()
         setFormErrors(validate(formValues))

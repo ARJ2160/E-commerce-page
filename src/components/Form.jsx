@@ -5,7 +5,7 @@ const Form = () => {
     return (
         <div className="form col-lg-5 col-md-6 mb-5 ps-0 pe-0">
             <h4>Shipping and Payment</h4>
-            <div className="login-btn d-flex justify-content-start mt-5">
+            <div className="form--btns d-flex justify-content-start mt-5">
                 <a href="/login">
                     <button className="common-button login">
                         LOG IN

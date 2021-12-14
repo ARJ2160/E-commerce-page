@@ -18,11 +18,13 @@ const HeroNav = () => {
                         </h2>
                     </div>
                 </div>
-                <ul className={navBtn ? "nav-links show" : "nav-links"}>
-                    <li><a href="/">Men</a></li>
-                    <li><a href="/">Women</a></li>
-                    <li><a href="/">Kids</a></li>
-                </ul>
+                <div className="nav--pages-link">
+                    <ul className={navBtn ? "nav-links show" : "nav-links"}>
+                        <li><a href="/">Men</a></li>
+                        <li><a href="/">Women</a></li>
+                        <li><a href="/">Kids</a></li>
+                    </ul>
+                </div>
                 <div className="nav--social-media">
                     <div className="nav-btn">
                         <button><img src={search} alt="" /></button>

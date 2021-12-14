@@ -45,12 +45,16 @@ const SignIn = () => {
         }
     
         // Check if there are no errors
-        dispatch(checksignIn({ formValues }))
+        if (Object.keys(errors).length === 0) {
+
+            // Check if details match
+            dispatch(checksignIn({ formValues }))
             if (flag) {
                 dispatch(signIn({ formValues }))
                 navigate("/")
                 form.reset()
             }
+        }
         return errors
     }   
     return (
