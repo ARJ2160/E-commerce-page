@@ -1,28 +1,44 @@
-// const express = require("express");
-// const app = express();
-// const port = process.env.PORT || 5000;
+const cors = require('cors')
+const express = require('express')
+const stripe = require('stripe')("sk_test_51K6gQLSFdtUbPFxM9qkQibP4eyr22kWuRkjpiRx7ypqJpUyirsvaf7nufYJuFMAM5s5QTryoVTsMlPfJux4dCbT100dTs7Id9y")
+const { v4: uuidv4 } = require('uuid');
 
-// // middlewares
-// app.use(express.json({ extended: false }));
+const app = express()
 
-// // route included
-// app.use("/payment", require("./routes/payment"));
+app.use(express.json())
+app.use(cors())
 
-// app.listen(port, () => console.log(`server started on port ${port}`));
+app.get("/", (req, res) => {
+    res.send("Works Fine")
+})
 
-// var instance = new Razorpay({
-//     key_id: 'MbQEh9VUM9yiDaT3Ssu3Ej8s',
-//     key_secret: 'rzp_test_OAMlpVxqAeFalg',
-// });
+app.post("/payment", (req, res) => {
+    
+    const { product, token } = req.body
+    console.log("PRODUCT", product);
+    console.log("TOKEN", token);
+    const idempotencyKey = uuidv4()
 
-// app.post("/create/orderId", (req, res, next) => {
-//     var options = {
-//         amount: 50000,  // amount in the smallest currency unit
-//         currency: "INR",
-//         receipt: "order_rcptid_11"
-//     };
-//     instance.orders.create(options, function(err, order) {
-//         console.log(order);
-//         res.send({orderId: order.id});
-//     });
-// })
+    return stripe.customers.create({
+        email: token.email,
+        source: token.id
+    })
+    .then(customer => {
+        stripe.charges.create({
+            amount: product.price * 100,
+            currency: 'usd',
+            customer: customer.id,
+            description: product.name,
+            shippingAddress: {
+                name: token.card.name,
+                address: {
+                    country: token.card.address_country
+                }
+            }
+        }, {idempotencyKey})
+    })
+    .then(result => res.status(200).json(result))
+    .catch(err => console.log(err))
+})
+
+app.listen("5000", () => console.log())

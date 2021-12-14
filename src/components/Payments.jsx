@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Payments = () => {
+    
     return (
         <div className="payments col-lg-4 col-md-6 mb-5 ps-0 pe-0">
             <div className="payment-cards">
