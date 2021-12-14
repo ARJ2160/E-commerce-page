@@ -1,4 +1,4 @@
-#E-COMMERCE-PAGE
+#E-SHOP
 
 Steps to run the project - 
 Step I - Run the Frontend
