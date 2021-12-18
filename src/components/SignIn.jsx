@@ -30,10 +30,10 @@ const SignIn = () => {
     }
 
     const validate = formValues => {
-        
+
         const errors = {}
         const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        
+
         if (!formValues.email) {
             errors.email = "Email is Required"
         }
@@ -43,7 +43,7 @@ const SignIn = () => {
         if (!formValues.password) {
             errors.password = "Password is Required"
         }
-    
+
         // Check if there are no errors
         if (Object.keys(errors).length === 0) {
 
@@ -56,7 +56,8 @@ const SignIn = () => {
             }
         }
         return errors
-    }   
+    }
+
     return (
         <section id="form" className='side-padding'>
             <div className="group d-flex justify-content-center align-items-center">
@@ -78,12 +79,12 @@ const SignIn = () => {
                         />
                     </div>
                     <p className="form-errors">{formErrors.email}</p>
-                    <label htmlFor="password">Password</label>    
+                    <label htmlFor="password">Password</label>
                     <div className="form-divs">
                         <input
                             type="password"
                             name="password"
-                            id = "password"    
+                            id = "password"
                             placeholder="Password"
                             values={formValues.password}
                             onChange={handleChange}

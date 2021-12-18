@@ -42,8 +42,7 @@ const signUpSlice = createSlice({
 
             const { email, password } = payload.formValues
             if (state.find(mail => mail.email === email)) {
-                if (state.find(pass => pass.password === md5(password)))
-                {
+                if (state.find(pass => pass.password === md5(password))) {
                     userName = current(state).find(mail => mail.email === email).firstName
                     flag = true
                     signInSuccess= "Sign In Successfull"
