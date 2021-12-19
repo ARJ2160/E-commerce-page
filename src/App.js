@@ -1,11 +1,9 @@
 import React from "react"
-// import Home from "./components/Home";
 import HeroNav from "./components/HeroNav";
 import Form from "./components/Form"
 import Payments from "./components/Payments";
 import Cart from "./components/Cart"
 import Footer from "./components/Footer";
-// import HoverMenu from "./components/HoverMenu";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
@@ -23,7 +21,6 @@ function App() {
                             <Payments />
                             <Cart />
                             <Footer />
-                            {/* <HoverMenu /> */}
                         </div>
                     </div>
                 } />
@@ -36,7 +33,6 @@ function App() {
                 <Route exact path="/signup" element={
                     <div>
                         <HeroNav />
-                        
                         <SignUp />
                     </div>
                 } />
